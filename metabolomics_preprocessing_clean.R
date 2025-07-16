@@ -94,7 +94,7 @@ hist(as.numeric(metabolon_data_chem_4$X35),  ## non-normal distribution
 
 # ______________________________________________________________________________________
 ### 4. Data transformation ----
-## Conservative approach: log2Fold + z-score (actually mean centering)
+## Conservative approach: log2Fold + z-score (for mean centering, use scale = FALSE)
 metabolon_data_chem_normalized <- log2(metabolon_data_chem_4)
 metabolon_data_chem_normalized <- as.data.frame(scale(metabolon_data_chem_normalized))  ## z-scores
 

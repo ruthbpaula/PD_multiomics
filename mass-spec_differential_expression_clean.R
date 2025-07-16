@@ -104,7 +104,7 @@ colnames(linear_LSD_classif) <- c("CHEM_ID", "lrt_test", "padj_lrt")
 rownames(linear_LSD_classif) <- linear_LSD_classif$CHEM_ID
 
 # After running LRT, calculate mean metabolite level per metabolite, for control and for case separately. 
-# Use that to calculate log2FC ( log2(mean case/mean control) ) and evaluate whether a certain metabolite is upregulated or downregulated in the dataset.
+# Use that to evaluate whether a certain metabolite is upregulated or downregulated in the dataset.
 control_data <- metab_ab_norm_filtered[metab_ab_norm_filtered$GROUP_NAME %in% "Control",]
 PD_data <- metab_ab_norm_filtered[metab_ab_norm_filtered$GROUP_NAME %in% "PD",]
 
@@ -193,8 +193,8 @@ linear_LSD_classif <- full_result
 linear_LSD_classif <- linear_LSD_classif[linear_LSD_classif$padj_lrt > 0.0000000005,]
 
 # OPTIONAL - Plot p-values instead of padj
-colnames(linear_LSD_classif[3]) <- "padj_temp"
-colnames(linear_LSD_classif[2]) <- "padj_lrt"
+colnames(linear_LSD_classif)[3] <- "padj_temp"
+colnames(linear_LSD_classif)[2] <- "padj_lrt"
 
 ## Plot (red dots are upregulated DEPs; blue dots are downregulated DEPs; grey dots are not DEPs)
 options(digits=2)
