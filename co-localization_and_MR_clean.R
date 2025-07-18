@@ -1,3 +1,7 @@
+# Pipeline by Ruth De Paula
+## Co-localization and SMR analysis ##
+# Coloc pipeline was adapted from Senkevich et al., 2023: https://pubmed.ncbi.nlm.nih.gov/36370000/
+
 options(digits=22)  ## necessary to ensure R is going to read big key numbers
 
 ### 1. Co-localization with GWAS-eQTLs and GWAS-mQTLs ----
